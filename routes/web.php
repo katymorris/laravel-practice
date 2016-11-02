@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    echo 'Hello Laravel';
+    return view('welcome');
 });
 
 Route::get('hello/{name}', function($name) {
@@ -29,15 +29,16 @@ Route::get('test', function() {
 	echo '<form action="test" method="POST">';
 	echo '<input type="submit">';
 	echo '<input type="hidden" value="' . csrf_token() . '" name="_token">';
+	echo '<input type="hidden" name="_method" value="PUT"';
 	echo '</form>';
 });
 
 //update an item
 Route::put('test', function() {
-
+	echo 'We just updated an item';
 });
 
 //delete an item
 Route::delete('test', function() {
-
+	echo 'We just deleted an item';
 });
